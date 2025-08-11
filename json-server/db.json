@@ -1,0 +1,6 @@
+{
+  "todos": [
+    { "id": 1, "title": "Learn NgRx", "completed": false },
+    { "id": 2, "title": "Build To-Do App", "completed": false }
+  ]
+}
