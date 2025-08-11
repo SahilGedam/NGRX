@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h2 class="mb-3">Todo Dashboard</h2>
+
+  <button class="btn btn-primary mb-3" (click)="goToAdd()">Add Todo</button>
+
+  <div *ngIf="loading$ | async" class="alert alert-info">
+    Loading todos...
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Completed</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of (todos$ | async)">
+        <td>{{ todo.title }}</td>
+        <td>{{ todo.completed ? 'Yes' : 'No' }}</td>
+        <td>
+          <button class="btn btn-warning btn-sm me-2" (click)="goToUpdate(todo.id)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteTodo(todo.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

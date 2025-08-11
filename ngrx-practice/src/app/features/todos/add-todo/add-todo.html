@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h2>Add Todo</h2>
+
+  <form (ngSubmit)="addTodo()">
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input type="text" [(ngModel)]="title" name="title" class="form-control" />
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" [(ngModel)]="completed" name="completed" class="form-check-input" id="completedCheck">
+      <label class="form-check-label" for="completedCheck">Completed</label>
+    </div>
+
+    <button type="submit" class="btn btn-success">Add</button>
+    <a class="btn btn-secondary ms-2" routerLink="['/todos']">Cancel</a>
+  </form>
+</div>
