@@ -25,4 +25,7 @@ export class AddTodo {
     this.store.dispatch(TodoActions.addTodo({ todo: newTodo }));
     this.router.navigate(['/todos']);
   }
+    goTo(path: string) {
+    this.router.navigate([path]);
+  }
 }
